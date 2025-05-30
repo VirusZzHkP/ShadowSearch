@@ -1,5 +1,11 @@
 # 🕵️‍♂️ ShadowSearch - Smarter Searching for Smarter Investigations
 
+![GitHub top language](https://img.shields.io/github/languages/top/VirusZzHkP/ShadowSearch?color=red&style=for-the-badge)
+[![GitHub license](https://img.shields.io/github/license/VirusZzHkP/ShadowSearch?color=yellow&style=for-the-badge)](https://github.com/VirusZzHkP/ShadowSearch/blob/main/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/VirusZzHkP/ShadowSearch?color=green&style=for-the-badge)](https://github.com/VirusZzHkP/ShadowSearch/stargazers)
+---
+
+
 **ShadowSearch** is a smart search query builder extension designed for OSINT researchers, cybersecurity professionals, ethical hackers, and digital investigators. It streamlines the process of crafting advanced dorking queries to uncover publicly accessible files, media, and sensitive documents across the web.
 
 <p align="center">
