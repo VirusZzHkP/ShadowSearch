@@ -2,7 +2,9 @@
 
 **ShadowSearch** is a smart search query builder extension designed for OSINT researchers, cybersecurity professionals, ethical hackers, and digital investigators. It streamlines the process of crafting advanced dorking queries to uncover publicly accessible files, media, and sensitive documents across the web.
 
-![ShadowSearch Banner](static/logo.png) <!-- Replace with your actual image -->
+<p align="center">
+  <img src="static/logo.png" alt="ShadowSearch Banner" />
+</p>
 
 ---
 
@@ -35,10 +37,11 @@
 
 ---
 
-## 📸 Screenshots
+## 📸 Screenshot
 
-![alt text](https://github.com/VirusZzHkP/ShadowSearch/blob/main/static/interface.jpg?raw=true)
-
+<p align="center">
+  <img src="static/interface.jpg" alt="ShadowSearch Banner" />
+</p>
 
 
 ---
