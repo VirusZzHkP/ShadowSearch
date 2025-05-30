@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "ShadowSearch",
+  "version": "1.0",
+  "description": "ShadowSearch is a powerful OSINT query builder for hackers and researchers to craft advanced search dorks — an initiative by JustHack_IT.",
+  "author": "JustHack_IT (@VirusZzWarning)",
+  "homepage_url": "https://github.com/VirusZzHkP/ShadowSearch",
+  "icons": {
+    "16": "static/icon16.png",
+    "48": "static/icon48.png",
+    "128": "static/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "static/icon16.png",
+      "48": "static/icon48.png",
+      "128": "static/icon128.png"
+    }
+  },
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://www.google.com/*",
+    "https://www.bing.com/*",
+    "https://duckduckgo.com/*",
+    "https://www.sogou.com/*",
+    "https://www.baidu.com/*",
+    "https://yandex.com/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "static/icon16.png",
+        "static/icon48.png",
+        "static/icon128.png"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  }
+}

@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ShadowSearch</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Styles -->
+<style>
+:root {
+  --primary: #e02e2e;
+  --background: #ffffff;
+  --background-dark: #121212;
+  --text: #1e1e1e;
+  --text-dark: #e0e0e0;
+  --border: #ddd;
+  --border-dark: #333;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 10px;
+  width: 280px;
+  height: 580px;
+  background: var(--background);
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+
+body.dark-mode {
+  background: var(--background-dark);
+  color: var(--text-dark);
+}
+
+h1 {
+  font-size: 1.2em;
+  margin-bottom: 0.2em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+h1 img {
+  width: 24px;
+  height: 24px;
+}
+
+h2 {
+  font-size: 1em;
+  margin: 0.2em 0 0.8em;
+}
+
+input[type="text"],
+select {
+  width:95%;
+  padding: 6px;
+  margin-bottom: 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: transparent;
+  color: inherit;
+}
+
+body.dark-mode input[type="text"],
+body.dark-mode select {
+  border-color: var(--border-dark);
+}
+
+.checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  font-size: 0.85em;
+  gap: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 8px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #881b14;
+}
+
+.dark-mode-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 22px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  border-radius: 22px;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: var(--primary);
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+body.dark-mode select#searchEngine option {
+  background-color: #000000;
+  color: #e0e0e0;
+}
+
+
+</style>
+</head>
+
+<body>
+  <h1><img src="static/icon48.png" alt="Logo"> ShadowSearch</h1>
+  <h2>Built for OSINT, Loved by Hackers <br> Smarter Search Starts Here</h2>
+
+  <input type="text" placeholder="Keyword" id="searchKeyword">
+  <input type="text" placeholder="Site (optional)" id="searchSite">
+  
+  <select id="searchEngine" style="width: 280px;">
+    <option value="" disabled selected>Select Engine</option>
+    <option value="https://www.google.com/search?q=">Google</option>
+    <option value="https://www.bing.com/search?q=">Bing</option>
+    <option value="https://yandex.com/search/?text=">Yandex</option>
+    <option value="https://www.baidu.com/s?wd=">Baidu</option>
+    <option value="https://www.sogou.com/web?query=">Sogou</option>
+    <option value="https://duckduckgo.com/?q=">DuckDuckGo</option>
+  </select>
+
+<div class="checkbox-group">
+  <label><input type="checkbox" class="checkbox" value="pdf"> PDF</label>
+  <label><input type="checkbox" class="checkbox" value="documents"> Documents</label>
+  <label><input type="checkbox" class="checkbox" value="spreadsheets"> Spreadsheets</label>
+  <label><input type="checkbox" class="checkbox" value="presentations"> Presentations</label>
+  <label><input type="checkbox" class="checkbox" value="images"> Images</label>
+  <label><input type="checkbox" class="checkbox" value="videos"> Videos</label>
+  <label><input type="checkbox" class="checkbox" value="audio"> Audio</label>
+  <label><input type="checkbox" class="checkbox" value="compressed"> Compressed</label>
+  <label><input type="checkbox" class="checkbox" value="executables"> Executables</label>
+  <label><input type="checkbox" class="checkbox" value="scripts"> Scripts</label>
+  <label><input type="checkbox" class="checkbox" value="system"> System</label>
+  <label><input type="checkbox" class="checkbox" value="fonts"> Fonts</label>
+  <label><input type="checkbox" class="checkbox" value="passwordFiles"> Password Files</label>
+  <label><input type="checkbox" class="checkbox" value="loginFiles"> Login Files</label>
+  <label><input type="checkbox" class="checkbox" value="databaseFiles"> Database Files</label>
+  <label><input type="checkbox" class="checkbox" value="logFiles"> Log Files</label>
+  <label><input type="checkbox" class="checkbox" value="configurationFiles"> Configuration Files</label>
+  <label><input type="checkbox" class="checkbox" value="backupFiles"> Backup Files</label>
+</div>
+
+
+  <button id="searchBtn">🔍 Search</button>
+
+<div class="dark-mode-toggle">
+  <span id="modeLabel">🌙 Dark Mode</span>
+  <label class="switch">
+    <input type="checkbox" id="darkModeToggle">
+    <span class="slider"></span>
+  </label>
+</div>
+
+<footer class="mt-4 text-center" style="font-size: 0.9rem; color: #888;">
+  <p>
+    &copy; 2025 <strong>ShadowSearch</strong> &mdash; An initiative of <strong>JustHack_IT</strong><br>
+    Built with ❤️ for OSINT investigators, researchers, and cyber hunters.<br>
+    Crafted by <a href="https://x.com/hrisikesh_pal" target="_blank" style="color: #e02e2e;">VirusZzWarning</a>
+  </p>
+</footer>
+  <script src="popup.js"></script>
+</body>
+</html>
