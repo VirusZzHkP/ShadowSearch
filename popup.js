@@ -47,7 +47,7 @@ const fileTypes = {
     selectedCategories.forEach(category => {
       if (fileTypes[category]) {
         const types = fileTypes[category].map(ft => `filetype:${ft}`).join(' OR ');
-        filetypeQuery += `(${types}) OR `;
+        filetypeQuery += `${types} OR `;
       }
     });
 
